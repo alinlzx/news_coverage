@@ -9,3 +9,16 @@ event_news_sim %>% filter(cosine_sim > 0.5)  %>% View
 # checking out nyt raw ------------
 event_news_sim %>% filter(grepl("Myanm", nyt_abstract) | grepl("Myanma", nyt_title) ) %>% 
   select(nyt_title, nyt_abstract) %>% distinct() %>% View
+
+
+# checking out event raw ------------
+event_news_sim %>% filter(country == "Myanmar") %>% 
+  select(notes) %>% distinct() %>% View
+
+
+
+# reading in grouped data ------------------------------
+event_news_sim_grouped <- read_csv("data/mst/02_grouped_event_news_similarity.csv") 
+
+event_news_sim_grouped %>% filter(cosine_sim > 0.5)  %>% View()
+
