@@ -88,28 +88,11 @@ nyt_articles_ner <- nyt_articles_cleaned %>%
   select(news_index, nyt_txt) %>% 
   filter(grepl(poli_con_pattern, nyt_txt)) %>% 
   cbind(
-    nyt_ner = map_dfr(.x = select(., nyt_txt),
+    nyt_ner = map(.x = pull(., nyt_txt),
                       .f = ~str_extract_all(., ner_extract, simplify = T) %>% 
-                        str_trim() %>% stri_remove_empty_na) %>% 
-                        paste(collapse = "; "))
-  
-map(.x = pull(nyt_articles_ner, nyt_txt),
-        .f = ~str_extract_all(., ner_extract %>% str_replace_all("\\|", " | "), simplify = T) %>% 
-          str_trim() %>% unique %>% stri_remove_empty_na  %>% paste(collapse = "; ")) %>% 
-   View
-  
-
-
-  transform(
-    nyt_ner = str_extract_all(nyt_txt, ner_extract, simplify = F) %>% paste(collapse = "; ")
-  ) %>% 
-  separate_longer_delim(nyt_ner, delim = "; ") %>%
-  na.omit %>% 
-  # joining this to the named entity country xwalk
-  full_join(
-    country_ner_xwalk, by = c("nyt_ner" = "ner"), 
-    relationship = "many-to-many"
-  )
+                        str_trim() %>% stri_remove_empty_na %>% paste(collapse = "; ")) %>%
+                        unlist()
+                      )
 
 
 
