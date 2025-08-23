@@ -13,11 +13,24 @@ library(stargazer)
 library(countrycode)
 library(rjson)
 library(stringi)
+library(r2country)
+library(sf)
+library(rnaturalearthdata)
+library(rnaturalearth)
+
+# function to clean strings
+clean_str_custom <- function (str) {
+  str %>% str_replace_all("\\-", " ") %>% 
+    str_replace_all("\\s*\\([^\\)]+\\)", "") %>% 
+    str_replace_all("[^[:alnum:]]", " ") %>% 
+    stri_trans_general(id = "Latin-ASCII") %>% str_squish %>% 
+    tolower
+}
 
 # a "comprehensive" lexicon for nyt articles on politics/conflict
 
 poli_conflict_lexicon <- c("defense", "ambush", "ammunition", "armed", "arms", "army", "armistice", "battle", "blockade", "bomb", "cannon", "artillery", "civil", 
-                           "colonel", "corporal", "conflict", "corps", "destroy", "destruct", "draft", "fight", "fleet", "fort", "general", 
+                           "colonel", "corporal", "conflict", "ceasefire", "corps", "destroy", "destruct", "draft", "fight", "fleet", "fort", "general", 
                            "grenade", "damage", "guerrilla", "gang", "gun", "infantry", "intervention", "intervene", "legion", "lieutenant", 
                            "military", "militant", "militia", "missile", "munition", "naval", "navy", "patrol", "pentagon", "radar", "rebel", 
                            "regiment", "rifle", "rocket", "sergeant", "shell", "soldier", "submarine", "surrender", "tnt", "troop", "war", "weapon",
@@ -35,12 +48,12 @@ poli_conflict_lexicon <- c("defense", "ambush", "ammunition", "armed", "arms", "
 
 
 poli_conflict_lexicon_short <- c("defense",  "ammunition", "armed", "army", "armistice", "battle",  "bomb", "artillery",  
-                                 "conflict", "destroy", "destruct", "fight",  
-                                 "grenade",  "guerrilla", "gang",   
+                                 "conflict", "cease fire", "destroy", "destruct", "fight",  
+                                  "guerrilla", "gang",   
                                  "military", "militant", "militia", "missile", "munition", "rebel", 
-                                  "rocket",  "soldier", "troop", "war", "weapon","combat",  "force", 
+                                  "rocket",  "soldier", "troop", "war", "weapon","combat",  "forces", 
                                   "humanitarian",  "invade", "invasion", 
                                  "junta", "territory", "retaliat", "attack", "casualt", "assault", 
                                    "drone", "escalat", "p o w", "explod", "explos",  "kill", "injure", "hostage", 
-                                  "junta", "violen", 
+                                   "violen", 
                                  "deploy", "fight")
