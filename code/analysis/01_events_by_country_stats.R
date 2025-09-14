@@ -11,7 +11,7 @@
 source("header.R")
 
 # importing nyt --> country build -----------------------------
-nyt_country_cleaned <- read_csv("data/mst/05_nyt_to_countries.csv")
+nyt_country_cleaned <- read_csv("data/mst/06_nyt_to_countries.csv")
 
   
 # importing events data -----------------------------------------
@@ -79,11 +79,8 @@ world <- world %>% mutate(name_long_lower = tolower(name_long)) %>%
     .default= name_long_lower
   ))
 
-# User data: make sure country column is lowercase too
-# df <- df %>% mutate(country_lower = tolower(!!sym(country_col)))
-
 # Merge user data with map
-world_data <- full_join(world, df, by = c("country" = "country")) %>% 
+world_data <- full_join(world, nyt_country_grouped, by = c("country" = "country")) %>% 
   mutate(across(c("n_art", "total_fat"), ~ifelse(name_long_lower == "united states", NA, replace_na(., 0)))) %>% 
   transform(is_us = ifelse(name_long_lower == "united states", 1, 0))
 

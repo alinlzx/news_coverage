@@ -1,0 +1,789 @@
+country,ner,type
+afghanistan,kabul,capital
+afghanistan,khorasan,other_ner
+afghanistan,iskp,other_ner
+afghanistan,nrf,other_ner
+afghanistan,afghanistan,country_name
+aland islands,aland islands,country_name
+albania,tirana,capital
+albania,albania,country_name
+algeria,algiers,capital
+algeria,algeria,country_name
+american samoa,american samoa,country_name
+andorra,andorra la vella,capital
+andorra,andorra,country_name
+angola,luanda,capital
+angola,flec,other_ner
+angola,angola,country_name
+anguilla,the valley,capital
+anguilla,anguilla,country_name
+antarctica,antarctica,country_name
+antigua and barbuda,saint john s,capital
+antigua and barbuda,antigua and barbuda,country_name
+antigua barbuda,antigua barbuda,country_name
+argentina,buenos aires,capital
+argentina,argentina,country_name
+armenia,yerevan,capital
+armenia,armenia,country_name
+aruba,aruba,country_name
+australia,canberra,capital
+australia,australia,country_name
+austria,vienna,capital
+austria,austria,country_name
+austria hungary,austria hungary,country_name
+azerbaijan,baku,capital
+azerbaijan,azerbaijan,country_name
+baden,baden,country_name
+bahamas,nassau,capital
+bahamas,bahamas,country_name
+bahrain,manama,capital
+bahrain,bahrain,country_name
+bangladesh,dhaka,capital
+bangladesh,bangladesh,country_name
+barbados,bridgetown,capital
+barbados,barbados,country_name
+bavaria,bavaria,country_name
+belarus,minsk,capital
+belarus,belarus,country_name
+belgium,brussels,capital
+belgium,belgium,country_name
+belize,belmopan,capital
+belize,belize,country_name
+benin,porto novo cotonou,capital
+benin,jnim,other_ner
+benin,benin,country_name
+bermuda,bermuda,country_name
+bhutan,thimphu,capital
+bhutan,bhutan,country_name
+bolivia,sucre,capital
+bolivia,bolivia,country_name
+bonaire sint eustatius and saba,bonaire sint eustatius and saba,country_name
+bosnia and herzegovina,sarajevo,capital
+bosnia and herzegovina,bosnia herzegovina,country_name
+bosnia and herzegovina,bosnia,country_name
+bosnia and herzegovina,bosnia and herzegovina,country_name
+botswana,gaborone,capital
+botswana,botswana,country_name
+bouvet island,bouvet island,country_name
+brazil,brasilia,capital
+brazil,brazil,country_name
+british indian ocean territory,british indian ocean territory,country_name
+british virgin islands,british virgin islands,country_name
+brunei,bandar seri begawan,capital
+brunei,brunei,country_name
+brunei darussalam,brunei darussalam,country_name
+brunswick,brunswick,country_name
+bulgaria,sofia,capital
+bulgaria,bulgaria,country_name
+burkina faso,ouagadougou,capital
+burkina faso,jnim,other_ner
+burkina faso,vdp,other_ner
+burkina faso,issp,other_ner
+burkina faso,islamic state sahel province,other_ner
+burkina faso,burkina faso,country_name
+burundi,gitega,capital
+burundi,red tabara,other_ner
+burundi,tabara,other_ner
+burundi,burundi,country_name
+cambodia,phnom penh,capital
+cambodia,cambodia,country_name
+cameroon,yaounde,capital
+cameroon,fulani,other_ner
+cameroon,iswap,other_ner
+cameroon,islamic state west africa province,other_ner
+cameroon,ambazon,other_ner
+cameroon,cameroon,country_name
+canada,ottawa,capital
+canada,canada,country_name
+cape verde,praia,capital
+cape verde,cape verde,country_name
+cape verde,cabo verde,country_name
+caribbean netherlands,caribbean netherlands,country_name
+cayman islands,cayman islands,country_name
+central african republic,bangui,capital
+central african republic,fulani,other_ner
+central african republic,wagner group,other_ner
+central african republic,central african republic,country_name
+chad,n djamena,capital
+chad,iswap,other_ner
+chad,mouro,other_ner
+chad,birgit,other_ner
+chad,psf,other_ner
+chad,chad,country_name
+channel islands,channel islands,country_name
+chile,santiago,capital
+chile,chile,country_name
+china,beijing,capital
+china,china,country_name
+christmas island,christmas island,country_name
+cocos islands,cocos islands,country_name
+colombia,bogota,capital
+colombia,colombia,country_name
+comoros,moroni,capital
+comoros,comoros,country_name
+cook islands,cook islands,country_name
+costa rica,san jose,capital
+costa rica,costa rica,country_name
+cote d ivoire,yamoussoukro,capital
+cote d ivoire,cote d ivoire,country_name
+croatia,zagreb,capital
+croatia,croatia,country_name
+cuba,havana,capital
+cuba,cuba,country_name
+curacao,curacao,country_name
+cyprus,nicosia,capital
+cyprus,cyprus,country_name
+czech republic,prague,capital
+czechia,czechia,country_name
+czechoslovakia,czechoslovakia,country_name
+democratic republic of congo,kinshasa,capital
+democratic republic of congo,adf,other_ner
+democratic republic of congo,mayi mayi,other_ner
+democratic republic of congo,biloze,other_ner
+democratic republic of congo,codeco,other_ner
+democratic republic of congo,mobondo,other_ner
+democratic republic of congo,fpac,other_ner
+democratic republic of congo,ituri,other_ner
+democratic republic of congo,kasai,other_ner
+democratic republic of congo,red tabara,other_ner
+democratic republic of congo,tabara,other_ner
+democratic republic of congo,eplc,other_ner
+democratic republic of congo,wazalendo,other_ner
+democratic republic of congo,uplc,other_ner
+democratic republic of congo,baraka,other_ner
+democratic republic of congo,congo kinshasa,country_name
+democratic republic of congo,congo,country_name
+denmark,copenhagen,capital
+denmark,denmark,country_name
+djibouti,djibouti,capital
+djibouti,djibouti,country_name
+dominica,roseau,capital
+dominica,dominica,country_name
+dominican republic,santo domingo,capital
+dominican republic,dominican republic,country_name
+east timor,dili,capital
+ecuador,quito,capital
+ecuador,los chandy,other_ner
+ecuador,ecuador,country_name
+egypt,cairo,capital
+egypt,egypt,country_name
+el salvador,san salvador,capital
+el salvador,el salvador,country_name
+equatorial guinea,malabo,capital
+equatorial guinea,equatorial guinea,country_name
+eritrea,asmara,capital
+eritrea,eritrea,country_name
+estonia,tallinn,capital
+estonia,estonia,country_name
+eswatini,mbabane,capital
+eswatini,eswatini,country_name
+ethiopia,addis ababa,capital
+ethiopia,olf,other_ner
+ethiopia,oromo liberation,other_ner
+ethiopia,fano,other_ner
+ethiopia,kebele,other_ner
+ethiopia,oromo,other_ner
+ethiopia,ethiopia,country_name
+faeroe islands,torshavn,capital
+falkland islands,stanley,capital
+falkland islands,falkland islands,country_name
+falkland islands malvinas,falkland islands malvinas,country_name
+faroe islands,faroe islands,country_name
+fiji,suva,capital
+fiji,fiji,country_name
+finland,helsinki,capital
+finland,finland,country_name
+france,paris,capital
+france,france,country_name
+french guiana,french guiana,country_name
+french polynesia,french polynesia,country_name
+french southern territories,french southern territories,country_name
+gabon,libreville,capital
+gabon,gabon,country_name
+gambia,banjul,capital
+gambia,gambia,country_name
+georgia,tbilisi,capital
+georgia,georgia,country_name
+german democratic republic,german democratic republic,country_name
+germany,berlin,capital
+germany,germany,country_name
+ghana,accra,capital
+ghana,ghana,country_name
+gibraltar,gibraltar,capital
+gibraltar,gibraltar,country_name
+greece,athens,capital
+greece,greece,country_name
+greenland,greenland,country_name
+grenada,saint george s,capital
+grenada,grenada,country_name
+guadeloupe,guadeloupe,country_name
+guam,guam,country_name
+guatemala,guatemala city,capital
+guatemala,guatemala,country_name
+guernsey,guernsey,country_name
+guinea,conakry,capital
+guinea,guinea,country_name
+guinea bissau,bissau,capital
+guinea bissau,guinea bissau,country_name
+guyana,georgetown,capital
+guyana,guyana,country_name
+haiti,port au prince,capital
+haiti,mawozo,other_ner
+haiti,canaan gang,other_ner
+haiti,5 secondes,other_ner
+haiti,bwa kale,other_ner
+haiti,chien mechant,other_ner
+haiti,g pep,other_ner
+haiti,g 9,other_ner
+haiti,bout ba,other_ner
+haiti,kraze barye,other_ner
+haiti,haiti,country_name
+hamburg,hamburg,country_name
+hanover,hanover,country_name
+heard island and mcdonald islands,heard island and mcdonald islands,country_name
+heard mcdonald islands,heard mcdonald islands,country_name
+hesse darmstadt,hesse darmstadt,country_name
+hesse electoral,hesse electoral,country_name
+hesse grand ducal,hesse grand ducal,country_name
+hesse kassel,hesse kassel,country_name
+holy see,holy see,country_name
+honduras,tegucigalpa,capital
+honduras,honduras,country_name
+hong kong,victoria,capital
+hong kong,hong kong sar china,country_name
+hong kong,hong kong,country_name
+hungary,budapest,capital
+hungary,hungary,country_name
+iceland,reykjavik,capital
+iceland,iceland,country_name
+india,new delhi,capital
+india,naxal maoist,other_ner
+india,naxal,other_ner
+india,india,country_name
+indonesia,jakarta,capital
+indonesia,indonesia,country_name
+iran,tehran,capital
+iran,khorasan,other_ner
+iran,iskp,other_ner
+iran,iran,country_name
+iraq,baghdad,capital
+iraq,daesh,other_ner
+iraq,al shaghanba,other_ner
+iraq,isil,other_ner
+iraq,isis,other_ner
+iraq,kurdistan,other_ner
+iraq,iraq,country_name
+ireland,dublin,capital
+ireland,ireland,country_name
+isle of man,douglas,capital
+isle of man,isle of man,country_name
+israel,jerusalem,capital
+israel,israel,country_name
+italy,rome,capital
+italy,italy,country_name
+jamaica,kingston,capital
+jamaica,jamaica,country_name
+japan,tokyo,capital
+japan,japan,country_name
+jersey,jersey,country_name
+jordan,amman,capital
+jordan,jordan,country_name
+kazakhstan,nur sultan,capital
+kazakhstan,kazakhstan,country_name
+kenya,nairobi,capital
+kenya,al shabaab,other_ner
+kenya,kenya,country_name
+kiribati,kiribati,country_name
+kosovo,pristina,capital
+kosovo,kosovo,country_name
+kuwait,kuwait city,capital
+kuwait,kuwait,country_name
+kyrgyzstan,bishkek,capital
+kyrgyzstan,kyrgyzstan,country_name
+lao people s democratic republic,lao people s democratic republic,country_name
+laos,vientiane,capital
+laos,laos,country_name
+latvia,riga,capital
+latvia,latvia,country_name
+lebanon,beirut,capital
+lebanon,hamas,other_ner
+lebanon,hezbollah,other_ner
+lebanon,hizbullah,other_ner
+lebanon,lebanon,country_name
+lesotho,maseru,capital
+lesotho,lesotho,country_name
+liberia,monrovia,capital
+liberia,liberia,country_name
+libya,tripoli,capital
+libya,libya,country_name
+liechtenstein,vaduz,capital
+liechtenstein,liechtenstein,country_name
+lithuania,vilnius,capital
+lithuania,lithuania,country_name
+luxembourg,luxembourg city,capital
+luxembourg,luxembourg,country_name
+macau,macau,capital
+macau,macao sar china,country_name
+macau,macao,country_name
+madagascar,antananarivo,capital
+madagascar,dahalo,other_ner
+madagascar,gendamerie,other_ner
+madagascar,madagascar,country_name
+malawi,lilongwe,capital
+malawi,malawi,country_name
+malaysia,kuala lumpur,capital
+malaysia,malaysia,country_name
+maldives,male,capital
+maldives,maldives,country_name
+mali,bamako,capital
+mali,jnim,other_ner
+mali,wagner group,other_ner
+mali,islamic state sahel province,other_ner
+mali,issp,other_ner
+mali,ambassagou,other_ner
+mali,gatia,other_ner
+mali,tuareg,other_ner
+mali,gendamerie,other_ner
+mali,cmfpr1,other_ner
+mali,plateforme,other_ner
+mali,mali,country_name
+malta,valletta,capital
+malta,malta,country_name
+marshall islands,marshall islands,country_name
+martinique,martinique,country_name
+mauritania,nouakchott,capital
+mauritania,mauritania,country_name
+mauritius,port louis,capital
+mauritius,mauritius,country_name
+mayotte,mayotte,country_name
+mecklenburg schwerin,mecklenburg schwerin,country_name
+mexico,mexico city,capital
+mexico,sinaloa,other_ner
+mexico,los herreras,other_ner
+mexico,los rusos,other_ner
+mexico,los tlacos,other_ner
+mexico,cjng,other_ner
+mexico,jalisco new generation,other_ner
+mexico,santa rosa de lima,other_ner
+mexico,los cazadores,other_ner
+mexico,la familia michoacana,other_ner
+mexico,los chapitos,other_ner
+mexico,chiapas,other_ner
+mexico,mexico,country_name
+micronesia,micronesia,country_name
+modena,modena,country_name
+moldova,chisinau,capital
+moldova,moldova,country_name
+monaco,monte carlo quarter,capital
+monaco,monaco,country_name
+mongolia,ulaanbaatar,capital
+mongolia,mongolia,country_name
+montenegro,podgorica,capital
+montenegro,montenegro,country_name
+montserrat,montserrat,country_name
+morocco,rabat,capital
+morocco,morocco,country_name
+mozambique,maputo,capital
+mozambique,mozambique,country_name
+myanmar,naypyidaw,capital
+myanmar,kachin,other_ner
+myanmar,karen national,other_ner
+myanmar,myaung,other_ner
+myanmar,mspdf,other_ner
+myanmar,people s defense force,other_ner
+myanmar,launglon,other_ner
+myanmar,sein baydar,other_ner
+myanmar,kbu,other_ner
+myanmar,pakokku,other_ner
+myanmar,monywa,other_ner
+myanmar,yinmarbin,other_ner
+myanmar,okpho,other_ner
+myanmar,ye bi lu aphwe,other_ner
+myanmar,ye ogre,other_ner
+myanmar,arakan,other_ner
+myanmar,abino tiger,other_ner
+myanmar,min kha sit kyaung,other_ner
+myanmar,min kha,other_ner
+myanmar,ngazun,other_ner
+myanmar,magway,other_ner
+myanmar,myingyan,other_ner
+myanmar,kaung kin,other_ner
+myanmar,madaya,other_ner
+myanmar,gyobingauk,other_ner
+myanmar,yangon,other_ner
+myanmar,myaing,other_ner
+myanmar,karenni,other_ner
+myanmar,na gar,other_ner
+myanmar,shwe tan,other_ner
+myanmar,ye u,other_ner
+myanmar,thayarwady,other_ner
+myanmar,natogyi,other_ner
+myanmar,tanintharyi,other_ner
+myanmar,danu,other_ner
+myanmar,tartay,other_ner
+myanmar,kale district,other_ner
+myanmar,shwebo,other_ner
+myanmar,pyay,other_ner
+myanmar,dawei,other_ner
+myanmar,nsppdf,other_ner
+myanmar,seikphyu,other_ner
+myanmar,thandaung,other_ner
+myanmar,alawaka,other_ner
+myanmar,mandalay,other_ner
+myanmar,myeik,other_ner
+myanmar,myo nei,other_ner
+myanmar,salingyi,other_ner
+myanmar,pnlo,other_ner
+myanmar,pnla,other_ner
+myanmar,pa oh,other_ner
+myanmar,kndo,other_ner
+myanmar,pu war,other_ner
+myanmar,red bandana,other_ner
+myanmar,kanbalu,other_ner
+myanmar,taloke,other_ner
+myanmar,chinland,other_ner
+myanmar,matupi,other_ner
+myanmar,union liberation front,other_ner
+myanmar,msrf,other_ner
+myanmar,paungde,other_ner
+myanmar,siyin,other_ner
+myanmar,khin u,other_ner
+myanmar,ah htoo,other_ner
+myanmar,black falcon,other_ner
+myanmar,uurf,other_ner
+myanmar,kyar nyi,other_ner
+myanmar,thayet,other_ner
+myanmar,daung min,other_ner
+myanmar,dsndf,other_ner
+myanmar,dsnda,other_ner
+myanmar,hpdf,other_ner
+myanmar,homalin,other_ner
+myanmar,pslf,other_ner
+myanmar,tnla,other_ner
+myanmar,palaung,other_ner
+myanmar,ta ang,other_ner
+myanmar,myanmar,country_name
+namibia,windhoek,capital
+namibia,namibia,country_name
+nassau,nassau,country_name
+nauru,nauru,country_name
+nepal,kathmandu,capital
+nepal,nepal,country_name
+netherlands,amsterdam,capital
+netherlands,netherlands,country_name
+netherlands antilles,netherlands antilles,country_name
+new caledonia,new caledonia,country_name
+new zealand,wellington,capital
+new zealand,new zealand,country_name
+nicaragua,managua,capital
+nicaragua,nicaragua,country_name
+niger,niamey,capital
+niger,islamic state sahel province,other_ner
+niger,issp,other_ner
+niger,fpl,other_ner
+niger,jnim,other_ner
+niger,boko haram,other_ner
+niger,islamic state west africa province,other_ner
+niger,iswap,other_ner
+niger,gendamerie,other_ner
+niger,motogatta,other_ner
+niger,tchalakame,other_ner
+niger,niger,country_name
+nigeria,abuja,capital
+nigeria,zamfara,other_ner
+nigeria,tarok,other_ner
+nigeria,katsina,other_ner
+nigeria,fulani,other_ner
+nigeria,okuama,other_ner
+nigeria,islamic state west africa province,other_ner
+nigeria,iswap,other_ner
+nigeria,mnjtf,other_ner
+nigeria,ichen,other_ner
+nigeria,ipob,other_ner
+nigeria,benue,other_ner
+nigeria,kaduna,other_ner
+nigeria,boko haram,other_ner
+nigeria,bassa,other_ner
+nigeria,montol,other_ner
+nigeria,watch corps,other_ner
+nigeria,okoloba,other_ner
+nigeria,gbagyi,other_ner
+nigeria,kauru,other_ner
+nigeria,nigeria,country_name
+niue,niue,country_name
+norfolk island,norfolk island,country_name
+north korea,pyongyang,capital
+north korea,north korea,country_name
+north macedonia,skopje,capital
+north macedonia,north macedonia,country_name
+northern mariana islands,northern mariana islands,country_name
+norway,oslo,capital
+norway,norway,country_name
+oldenburg,oldenburg,country_name
+oman,muscat,capital
+oman,oman,country_name
+orange free state,orange free state,country_name
+pakistan,islamabad,capital
+pakistan,tehreek,other_ner
+pakistan,baloch,other_ner
+pakistan,islamic state pakistan province,other_ner
+pakistan,ispp,other_ner
+pakistan,jatoi,other_ner
+pakistan,pakistan,country_name
+palau,palau,country_name
+palestine,ramallah,capital
+palestine,hamas,other_ner
+palestine,palestinian islamic jihad,other_ner
+palestine,pij,other_ner
+palestine,al aqsa,other_ner
+palestine,gaza,other_ner
+palestine,palestinian,country_name
+palestine,palestine,country_name
+palestine,palestine state of,country_name
+panama,panama city,capital
+panama,panama,country_name
+papua new guinea,papua new guinea,country_name
+paraguay,asuncion,capital
+paraguay,paraguay,country_name
+parma,parma,country_name
+peru,lima,capital
+peru,peru,country_name
+philippines,manila,capital
+philippines,philippines,country_name
+piedmont sardinia,piedmont sardinia,country_name
+pitcairn,pitcairn,country_name
+pitcairn islands,pitcairn islands,country_name
+poland,warsaw,capital
+poland,poland,country_name
+portugal,lisbon,capital
+portugal,portugal,country_name
+prussia,prussia,country_name
+puerto rico,puerto rico,country_name
+qatar,doha,capital
+qatar,qatar,country_name
+republic of congo,brazzaville,capital
+republic of congo,republic of congo,country_name
+republic of vietnam,republic of vietnam,country_name
+reunion,reunion,country_name
+romania,bucharest,capital
+romania,romania,country_name
+russia,moscow,capital
+russia,khorasan,other_ner
+russia,islamic state khorasan province,other_ner
+russia,iskp,other_ner
+russia,freedom of russia,other_ner
+russia,rdk,other_ner
+russia,russia,country_name
+russian federation,russian federation,country_name
+rwanda,kigali,capital
+rwanda,rwanda,country_name
+saint barthelemy,saint barthelemy,country_name
+saint helena,jamestown,capital
+saint helena ascension and tristan da cunha,saint helena ascension and tristan da cunha,country_name
+saint kitts and nevis,basseterre,capital
+saint kitts and nevis,saint kitts and nevis,country_name
+saint lucia,castries,capital
+saint lucia,saint lucia,country_name
+saint martin,saint martin,country_name
+saint pierre and miquelon,saint pierre and miquelon,country_name
+saint vincent and the grenadines,kingstown,capital
+saint vincent and the grenadines,saint vincent and the grenadines,country_name
+samoa,samoa,country_name
+san marino,san marino,capital
+san marino,san marino,country_name
+sao tome and principe,sao tome and principe,country_name
+sao tome principe,sao tome,capital
+sao tome principe,sao tome principe,country_name
+sardinia,sardinia,country_name
+saudi arabia,riyadh,capital
+saudi arabia,saudi arabia,country_name
+saxe weimar eisenach,saxe weimar eisenach,country_name
+saxony,saxony,country_name
+senegal,dakar,capital
+senegal,senegal,country_name
+serbia,belgrade,capital
+serbia,serbia,country_name
+serbia and montenegro,serbia and montenegro,country_name
+seychelles,victoria,capital
+seychelles,seychelles,country_name
+sierra leone,freetown,capital
+sierra leone,sierra leone,country_name
+singapore,singapore,capital
+singapore,singapore,country_name
+sint maarten,sint maarten,country_name
+slovakia,bratislava,capital
+slovakia,slovakia,country_name
+slovenia,ljubljana,capital
+slovenia,slovenia,country_name
+solomon islands,solomon islands,country_name
+somalia,mogadishu,capital
+somalia,al shabaab,other_ner
+somalia,dir clan,other_ner
+somalia,jubaland,other_ner
+somalia,habar gedir saad,other_ner
+somalia,majerteen omar,other_ner
+somalia,hiiraan,other_ner
+somalia,sheeqaal,other_ner
+somalia,atmis,other_ner
+somalia,leelkayse,other_ner
+somalia,majerteen issa,other_ner
+somalia,somalia,country_name
+somaliland,somaliland,country_name
+south africa,pretoria,capital
+south africa,south africa,country_name
+south georgia and the south sandwich islands,south georgia and the south sandwich islands,country_name
+south georgia south sandwich islands,south georgia south sandwich islands,country_name
+south korea,seoul,capital
+south korea,south korea,country_name
+south korea,korea,country_name
+south sudan,juba,capital
+south sudan,murle,other_ner
+south sudan,bul clan,other_ner
+south sudan,dinka,other_ner
+south sudan,agar,other_ner
+south sudan,pakam agar,other_ner
+south sudan,anyuak,other_ner
+south sudan,gok clan,other_ner
+south sudan,panyar agar,other_ner
+south sudan,apuk rek,other_ner
+south sudan,budi,other_ner
+south sudan,luach jang,other_ner
+south sudan,kuacthii leer rek,other_ner
+south sudan,apuk giir rek,other_ner
+south sudan,gawaar,other_ner
+south sudan,rek,other_ner
+south sudan,kuok luach jang,other_ner
+south sudan,nyang rek,other_ner
+south sudan,south sudan,country_name
+spain,madrid,capital
+spain,spain,country_name
+sri lanka,sri jayawardenapura kotte and colombo,capital
+sri lanka,sri lanka,country_name
+st barthelemy,st barthelemy,country_name
+st helena,st helena,country_name
+st kitts nevis,st kitts nevis,country_name
+st lucia,st lucia,country_name
+st pierre miquelon,st pierre miquelon,country_name
+st vincent grenadines,st vincent grenadines,country_name
+stateless,stateless,country_name
+sudan,khartoum,capital
+sudan,rsf,other_ner
+sudan,rapid support forces,other_ner
+sudan,splm,other_ner
+sudan,abdelaziz,other_ner
+sudan,splm n abdelaziz,other_ner
+sudan,abdul wahid,other_ner
+sudan,mahyriya,other_ner
+sudan,rizeigat,other_ner
+sudan,shugara,other_ner
+sudan,darfur,other_ner
+sudan,twic,other_ner
+sudan,nuer,other_ner
+sudan,habbaniyah,other_ner
+sudan,misseriya,other_ner
+sudan,mararit,other_ner
+sudan,el udayyah,other_ner
+sudan,al sharef,other_ner
+sudan,habila,other_ner
+sudan,teital,other_ner
+sudan,ngok,other_ner
+sudan,abu darak,other_ner
+sudan,sudan,country_name
+suriname,paramaribo,capital
+suriname,suriname,country_name
+svalbard and jan mayen,svalbard and jan mayen,country_name
+svalbard jan mayen,svalbard jan mayen,country_name
+sweden,stockholm,capital
+sweden,sweden,country_name
+switzerland,bern,capital
+switzerland,switzerland,country_name
+syria,damascus,capital
+syria,hts,other_ner
+syria,hayat,other_ner
+syria,jws,other_ner
+syria,isil,other_ner
+syria,isis,other_ner
+syria,al fath,other_ner
+syria,daesh,other_ner
+syria,qsd,other_ner
+syria,qdw,other_ner
+syria,syria,country_name
+syrian arab republic,syrian arab republic,country_name
+taiwan,taipei,capital
+taiwan,taiwan,country_name
+tajikistan,dushanbe,capital
+tajikistan,tajikistan,country_name
+tanzania,dodoma,capital
+tanzania,tanzania,country_name
+tanzania the united republic of,tanzania the united republic of,country_name
+thailand,bangkok,capital
+thailand,thailand,country_name
+tibet,tibet,country_name
+timor leste,timor leste,country_name
+togo,lome,capital
+togo,jnim,other_ner
+togo,togo,country_name
+tokelau,tokelau,country_name
+tonga,tonga,country_name
+trinidad and tobago,port of spain,capital
+trinidad and tobago,trinidad and tobago,country_name
+trinidad tobago,trinidad tobago,country_name
+tunisia,tunis,capital
+tunisia,tunisia,country_name
+turkey,ankara,capital
+turkey,turkey,country_name
+turkmenistan,asgabat,capital
+turkmenistan,turkmenistan,country_name
+turks and caicos islands,turks and caicos islands,country_name
+turks caicos islands,turks caicos islands,country_name
+tuscany,tuscany,country_name
+tuvalu,tuvalu,country_name
+two sicilies,two sicilies,country_name
+u k,london,capital
+u k,united kingdom,country_name
+u k,u k,country_name
+u s,u s,country_name
+u s virgin islands,u s virgin islands,country_name
+uganda,kampala,capital
+uganda,uganda,country_name
+ukraine,kyiv,capital
+ukraine,lsr,other_ner
+ukraine,ukraine,country_name
+united arab emirates,abu dhabi,capital
+united arab emirates,united arab emirates,country_name
+united arab republic,united arab republic,country_name
+united province ca,united province ca,country_name
+united states,washington d c,capital
+united states,united states,country_name
+united states minor outlying islands,united states minor outlying islands,country_name
+united states of america,united states of america,country_name
+unknown,unknown,country_name
+uruguay,montevideo,capital
+uruguay,uruguay,country_name
+uzbekistan,tashkent,capital
+uzbekistan,uzbekistan,country_name
+vanuatu,vanuatu,country_name
+vatican city,vatican city,country_name
+venezuela,caracas,capital
+venezuela,venezuela,country_name
+viet nam,viet nam,country_name
+vietnam,hanoi,capital
+vietnam,vietnam,country_name
+virgin islands,virgin islands,country_name
+wallis and futuna,wallis and futuna,country_name
+wallis futuna,wallis futuna,country_name
+western sahara,western sahara,country_name
+wuerttemburg,wuerttemburg,country_name
+wurtemberg,wurtemberg,country_name
+yemen,sana a,capital
+yemen,houthi,other_ner
+yemen,giants brigades,other_ner
+yemen,yemen,country_name
+yemen arab republic,yemen arab republic,country_name
+yemen people s republic,yemen people s republic,country_name
+yugoslavia,yugoslavia,country_name
+zambia,lusaka,capital
+zambia,zambia,country_name
+zanzibar,zanzibar,country_name
+zimbabwe,harare,capital
+zimbabwe,zimbabwe,country_name

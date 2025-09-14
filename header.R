@@ -44,7 +44,7 @@ poli_conflict_lexicon <- c("defense", "ambush", "ammunition", "armed", "arms", "
                            
                            c("territory", "friction", "brigade", "target", "retaliat", "attack", "casualt", "assault", 
                              "drone", "escalat", "p o w", "explod", "explos", "blast", "kill", "injure", "hostage", "junta", "violen", 
-                             "occupation", "occupy", "deploy", "fight", "clash", "crisis"))
+                             "occupation", "occupy", "deploy", "fight", "clash", "crisis", "unrest"))
 
 
 poli_conflict_lexicon_short <- c("defense",  "ammunition", "armed", "army", "armistice", "battle",  "bomb", "artillery",  
