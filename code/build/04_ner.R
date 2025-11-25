@@ -42,13 +42,30 @@ acled_events_grouped_ner <- read_csv("data/mst/00d_acled_events_grouped_ner_manu
 
 # making a crosswalk between ner and countries ---------------------
 
+# adding other relevant entities (i.e., people, geographic regions) to the crosswalk
+other_entities <- tibble(
+  country = c("Russia", 
+              "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine",
+              "Palestine", "Palestine",
+              "Myanmar", "Myanmar",
+              "Sudan"),
+  ner = c("Putin", 
+          "Zelensky", "Donbas", "Kherson", "Luhansk", "Donetsk", "Crimea", "Zaporizhzhia", "Kharkiv",
+          "Khan Younis", "Gaza",
+          "Rohingya", "Rakhine",
+          "Darfur")
+)
+
 # split manual ner column
 country_ner_xwalk <- acled_events_grouped_ner %>% 
   select(country, ner) %>% 
   transform(ner = str_replace_all(ner, ", ", "; ")) %>% 
   separate_longer_delim(ner, delim = "; ") %>% 
   na.omit() %>% 
-  transform(ner = ner %>% clean_str_custom())
+  rbind(other_entities) %>% 
+  transform(ner = ner %>% clean_str_custom()) %>% 
+  arrange(country, ner)
+
 
 # doing country named entity recognition on title and abstracts -------------------
 

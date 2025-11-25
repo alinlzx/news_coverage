@@ -4,10 +4,14 @@
 
 #####################
 
+source("header.R")
+
 # importing events data -----------------------------------------
 
 acled_events <- read_csv("data/mst/00b_acled_events_filter.csv") %>% 
   select(-1)
+
+
 
 # importing all nyt coverage classified as poli con -----------
 
@@ -72,7 +76,12 @@ make_ts <- function (region) {
   scale_factor <- max(for_ts$n_fat)/max(for_ts$n_art)
   
   for_ts_long <- for_ts %>% 
-    pivot_longer(cols = c(n_art, total_fat), names_to = "stat", values_to = "n") 
+    pivot_longer(cols = c(n_art, n_fat), names_to = "stat", values_to = "n") 
+  
+  
+  # plotting dual axes time series
+  
+  
     
   
   
