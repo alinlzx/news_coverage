@@ -70,7 +70,7 @@ clean_up_map_countries <- function (arts_and_country) {
     select(-nyt_ner,-type) %>% 
     distinct() %>% 
     # taking out unlikely matches
-    filter(!(country %in% c('jersey', 'niue', 'iceland', "unknown", "nassau",
+    filter(!(country %in% c('jersey', 'niue', 'iceland', "unknown", "nassau", "brunswick",
                             "netherlands", "marshall islands", "anguilla", "seychelles", 
                             "georgia" # refers to state of georgia
     ))) %>% 
@@ -88,7 +88,7 @@ poli_con_pattern <- poli_conflict_lexicon_short %>% paste(collapse = "|")
 nyt_lexicon_class <- nyt_articles_cleaned %>% 
   select(nyt_txt, news_index) %>% 
   filter(grepl(poli_con_pattern, nyt_txt)) %>% 
-  map_art_to_c()
+  map_art_to_c() # many-to-many
 
 nyt_lexicon_class_clean <- nyt_lexicon_class %>% 
   clean_up_map_countries
@@ -155,6 +155,9 @@ nyt_ml_class_clean %>% eval_classifier
 
 nyt_lexicon_class_clean %>% eval_classifier
 
+
+nyt_class %>% left_join(nyt_articles) %>% 
+  filter(poli_con_class != predict_class)
 
 
 

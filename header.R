@@ -17,6 +17,10 @@ library(r2country)
 library(sf)
 library(rnaturalearthdata)
 library(rnaturalearth)
+library(gridExtra)
+library(RColorBrewer)
+library(ggrepel)
+library(zoo)
 
 # function to clean strings
 clean_str_custom <- function (str) {
@@ -57,3 +61,15 @@ poli_conflict_lexicon_short <- c("defense",  "ammunition", "armed", "army", "arm
                                    "drone", "escalat", "p o w", "explod", "explos",  "kill", "injure", "hostage", 
                                    "violen", 
                                  "deploy", "fight")
+
+
+# a quick helper function to code up regions -----------
+
+code_region <- function (df) {
+  
+  df %>% 
+    transform(region_un = ifelse(country %in% c("palestine", "israel"), "Palestine/Israel",
+                                 ifelse(country %in% c("ukraine", "russia"), "Ukraine/Russia", region_un)))  %>% 
+    transform(subregion = ifelse((subregion == "Western Asia" & region_un != "Palestine/Israel") | country %in% c("Iran", "Afghanistan"), "Greater ME", 
+                                 ifelse(country == "myanmar", "Myanmar", region_un)))
+}

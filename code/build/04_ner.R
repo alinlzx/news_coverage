@@ -47,13 +47,17 @@ other_entities <- tibble(
   country = c("Russia", 
               "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine", "Ukraine",
               "Palestine", "Palestine",
+              "Israel", 
               "Myanmar", "Myanmar",
-              "Sudan"),
+              "Sudan",
+              "Ethiopia", "Ethiopia", "Ethiopia"),
   ner = c("Putin", 
           "Zelensky", "Donbas", "Kherson", "Luhansk", "Donetsk", "Crimea", "Zaporizhzhia", "Kharkiv",
           "Khan Younis", "Gaza",
+          "Netanyahu",
           "Rohingya", "Rakhine",
-          "Darfur")
+          "Darfur",
+          "Oromo", "Oromia", "Tigray")
 )
 
 # split manual ner column

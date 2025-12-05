@@ -4,7 +4,7 @@
 
 # 1. identify relevant political conflict events in nyt art, and tag their countries
 # 2. join nyt art to acled events
-# 3. make visualizations of joined data
+# 3. make visualizations of joined data, including maps, bars, & points
 
 #####################
 
@@ -31,6 +31,7 @@ acled_events_grouped <- acled_events %>%
     # actors = str_split(actors, pattern = "; ") %>% unlist() %>% unique()
   ) %>% 
   select(-c(actor1, actor2)) 
+
 
 # mapping nyt countries to acled countries -----------------------
   
@@ -82,7 +83,26 @@ world <- world %>% mutate(name_long_lower = tolower(name_long)) %>%
 # Merge user data with map
 world_data <- full_join(world, nyt_country_grouped, by = c("country" = "country")) %>% 
   mutate(across(c("n_art", "total_fat"), ~ifelse(name_long_lower == "united states", NA, replace_na(., 0)))) %>% 
-  transform(is_us = ifelse(name_long_lower == "united states", 1, 0))
+  transform(is_us = ifelse(name_long_lower == "united states", 1, 0)) %>% 
+  filter(sovereignt != "Antarctica")
+
+# -----------------------------------------------------
+
+# exporting a copy of map data
+world_data %>% select(country, iso_a2_eh, region_un, subregion,
+                      n_art, total_fat, is_us) %>% 
+  filter(!iso_a2_eh %in% c("VA", "MP", "VI", "GU", "AS", "PR", "GS", "IO", "SH", "PN",
+                           "AI", "FK", "KY", "BM", "VC", "TC", "MS", "JE", "GG", "IM", 
+                           "-99", "NU", "CK", "AW", "CW", "PM", "WF", "MF", "BL", "PF", 
+                           "NC", "TF", "AX", "FO", "HM", "NF", "SX")) %>% 
+  as_tibble() %>% select(-geometry) %>% 
+  write_csv("data/analysis/01a_nyt_event_country_grouped_with_geo.csv")
+
+# exporting a copy as country - region xwalk
+world_data %>% select(country, region_un, subregion) %>% as_tibble() %>% 
+  write_csv("data/mst/06a_country_to_region_xwalk.csv")
+
+# ------------------------------------------------------
 
 # getting centroid coords
 centroids <- st_centroid(world_data) %>%
@@ -100,8 +120,9 @@ map_var_xwalk <- tibble(
   varlab = c("Number of Articles", "Total Fatalities")
 )
 
-  plot_world_statistic <- function(stat_col) {
+  plot_world_statistic <- function(stat_col, region_pick = "all") {
 
+    heat_color = ifelse(stat_col == "n_art", "#000038", "maroon")
     
     centroids_nona <- centroids %>% 
       filter(!is.na(get(stat_col)))
@@ -109,71 +130,163 @@ map_var_xwalk <- tibble(
     # plotting symbol map --------------------
     stat_max <- max(world_data[[stat_col]], na.rm = TRUE)
     
-    ggplot(data = world_data) +
-      geom_sf(aes(fill = as.factor(is_us)), color = "black") +
-      scale_fill_manual(values = c("white", "gray")) +
-      geom_point(data = centroids_nona, 
-                 aes(x = lon, 
-                     y = lat, 
-                     size = get(stat_col)), color = "#00008B",
-                 alpha = 0.25)+ 
-      scale_size_continuous(range = c(1, 25), breaks = c(20, 100, stat_max)) + 
-      theme_map() +
-      labs(size = glue("{pull(map_var_xwalk %>% filter(varname == stat_col), varlab)}"))
+    interval = ifelse(stat_max > 2000, 1000, 100)
+    stat_max_round <- ceiling(stat_max/interval)*interval
     
-    # plotting cropped map -------------
-    # Define bounding box for Europe + Africa + Middle East
-    if (region_pick == "East") {
-      bbox <- c(xmin = 65, xmax = 150, ymin = -20, ymax = 60)
-    } else if (region_pick == "West") {
-      bbox <- c(xmin = -25, xmax = 80, ymin = -50, ymax = 70)
+    if (region_pick == "all") {
+      
+      # plotting the entire world
+      
+      map <- ggplot(data = world_data) +
+        geom_sf(aes(fill = as.factor(is_us)), color = "gray") +
+        scale_fill_manual(values = c("white", "gray"), guide = "none") +
+        geom_point(data = centroids_nona, 
+                   aes(x = lon, 
+                       y = lat, 
+                       size = get(stat_col)), color = heat_color,
+                   alpha = 0.5)+ 
+        scale_size_continuous(range = c(1, 25), breaks = c(20, stat_max_round/5, stat_max_round/2, floor(stat_max/interval)*interval)) + 
+        theme_map() +
+        # theme(legend.position = "bottom") +
+        labs(size = glue("{pull(map_var_xwalk %>% filter(varname == stat_col), varlab)}"))
+      
+      return(map)
     }
     
-    
-    # Crop map
-    region <- st_crop(world_data, bbox)
-    
-    # Plot
-    ggplot() +
-      geom_sf(data = region, aes(fill = !!sym(stat_col)), color = "black") +
-      scale_fill_gradient(low = "white", high = "#000038") +
-      theme_minimal() +
-      coord_sf(xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
-      labs(fill = glue("{pull(map_var_xwalk %>% filter(varname == stat_col), varlab)}"))
-    
-    
-    # dual axis bars -------------------
-    
- 
-    # getting scale factor for dual axes
-    scale_factor <- max(nyt_country_grouped$total_fat)/max(nyt_country_grouped$n_art)
-    
-    # reshape long
-    nyt_country_grouped_long <- nyt_country_grouped %>% arrange(get(stat_col)) %>% slice_max(get(stat_col), n = 30) %>%
-      mutate(n_art = n_art * scale_factor, index_by_stat = row_number(),
-             country = str_to_title(country)) %>% 
-    pivot_longer(cols = c(n_art, total_fat), names_to = "stat", values_to = "n") %>% 
-      transform(stat = as.factor(stat)) %>% 
-      transform(stat = factor(stat, levels = c("total_fat", "n_art")))
-    
-    
-    ggplot(nyt_country_grouped_long) + 
-      geom_bar(stat = "identity", aes(x = reorder(country, index_by_stat), y = n, fill = stat), position = "dodge") + 
-      scale_y_continuous(name = "Number of Fatalities",
-                         sec.axis = sec_axis(~ . / scale_factor, name = "Number of Articles")) + 
-      scale_fill_manual(values = c("#953552", "#000038"), labels = c("Total Fatalities", "Total Article Count")) + 
-      labs(x = "Country") +
-      theme_minimal() + 
-      theme(legend.position = "bottom",
-            legend.title = element_blank(),
-            axis.text.x = element_text(angle = 75, vjust = 1, hjust = 1))
+    else {
       
+      # plotting cropped map -------------
+      # Define bounding box for Europe + Africa + Middle East
+      if (region_pick == "East") {
+        bbox <- c(xmin = 55, xmax = 150, ymin = -8, ymax = 60)
+        world_data <- world_data %>% filter(sovereignt != "Russia")
+      } else if (region_pick == "West") {
+        bbox <- c(xmin = -20, xmax = 60, ymin = -10, ymax = 70)
+        
+      }
+      
+      
+      # Crop map
+      region <- st_crop(world_data, bbox)
+      region_centroids <- st_crop(centroids_nona, bbox)
+      
+      # Plot
+      ggplot() +
+        geom_sf(data = region, aes(fill = !!sym(stat_col)), color = "black") +
+        scale_fill_gradient(low = "white", high = heat_color) +
+        # geom_point(data = region_centroids,
+        #            aes(x = lon,
+        #                y = lat,
+        #                size = get(stat_col)), color = heat_color,
+        #            alpha = 0.5) +
+        # scale_size_continuous(guide = "none", range = c(1, 25)) +
+        theme_minimal() +
+        coord_sf(xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
+        labs(fill = glue("{pull(map_var_xwalk %>% filter(varname == stat_col), varlab)}")) + 
+          theme(legend.position = "bottom",
+                axis.title.x = element_blank(),
+                axis.title.y = element_blank())
+      
+      
+      
+      
+    }
+   
     
     
   }
   
 # applying the function to fat:
 
-plot_world_statistic( "n_art")
+plot_world_statistic( "total_fat")
+
+art <- plot_world_statistic( "n_art", "East")
+fat <- plot_world_statistic( "total_fat", "East")
+grid.arrange(art, fat, ncol = 2)
+
+# dual axis bars -------------------
+
+stat_col <- "n_art"
+
+# getting scale factor for dual axes
+scale_factor <- max(nyt_country_grouped$total_fat)/max(nyt_country_grouped$n_art)
+
+# reshape long
+nyt_country_grouped_long <- nyt_country_grouped %>% arrange(get(stat_col)) %>% slice_max(get(stat_col), n = 15) %>%
+  mutate(n_art = n_art * scale_factor, index_by_stat = row_number(),
+         country = str_to_title(country)) %>% 
+  pivot_longer(cols = c(n_art, total_fat), names_to = "stat", values_to = "n") %>% 
+  transform(stat = as.factor(stat)) %>% 
+  transform(stat = factor(stat, levels = c("total_fat", "n_art")),
+            country = ifelse(country == "Democratic Republic Of Congo", "DRC", country))
+
+
+ggplot(nyt_country_grouped_long) + 
+  geom_bar(stat = "identity", aes(x = reorder(country, index_by_stat), y = n, fill = stat), position = "dodge") + 
+  scale_y_continuous(name = "Number of Fatalities",
+                     sec.axis = sec_axis(~ . / scale_factor, name = "Number of Articles")) + 
+  scale_fill_manual(values = c("#953552", "#000038"), labels = c("Total Fatalities", "Total Article Count")) + 
+  # labs(x = "Country") +
+  theme_minimal() + 
+  theme(legend.position = "bottom",
+        legend.title = element_blank(),
+        legend.text = element_text(size = 15),
+        axis.title.y = element_text(size = 15),
+        axis.text.y = element_text(size = 15),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 75, vjust = 1, hjust = 1, size = 20))
+
+# point plot of casualty on coverage --------------------
+
+# highlight one region, and then make all other regions gray: 
+# region_pick <- "Africa"
+
+plt_art_vs_fat_point <- function (region_pick) {
+  
+  for_point_plt <- nyt_country_grouped %>% 
+    left_join(world_data %>% select(country, region_un, subregion)) %>% 
+    code_region %>% 
+    mutate(across(c(n_art, total_fat), ~ifelse(. == 0, . + 0.9, .)), # for log scale
+           region_label = ifelse(region_un == region_pick, region_un, "Other")) %>% 
+    as_tibble %>% 
+    filter(!is.na(region_label))
+  
+  clabs <- for_point_plt %>% 
+    filter(total_fat > 1000) %>% 
+    filter(region_un == region_pick)
+  
+  pal <- c(brewer.pal(n = length(for_point_plt %>% pull(region_un) %>% unique), name = "Set1"), 
+           "gray")
+  names(pal) <- c(for_point_plt$region_un %>% unique() %>% sort, "Other")
+  
+  ggplot(data = for_point_plt,
+         aes(x = total_fat, y = n_art)) + 
+    geom_point(aes(color = region_label), size = 3) + 
+    scale_color_manual(values = pal) + 
+    theme_bw() + 
+    scale_x_log10() + 
+    # scale_y_log10() + 
+    labs(x = "Total Fatalities",
+         y = "Article Count",
+         colour = "Region",
+         title = region_pick) +
+    theme(legend.position = "none",
+          axis.title.x = element_text(size = 12),
+          axis.title.y = element_text(size = 12),
+          title = element_text(size = 12))  + 
+    geom_label_repel(data = clabs, aes(y = n_art, x = total_fat, label = country),
+                     size = 3,
+                     box.padding = unit(0.5, "lines"),
+                     point.padding = unit(0.5, "lines"),
+                     segment.colour = "grey50")
+  
+  
+}
+
+point_plt_list <- map(c("Africa", "Ukraine/Russia", "Palestine/Israel", "Asia"), 
+    ~plt_art_vs_fat_point(.))
+
+grid.arrange(grobs = point_plt_list, nrow = 2)
+
 
 
