@@ -1,7 +1,7 @@
 country,ner,type
 afghanistan,kabul,capital
-afghanistan,khorasan,other_ner
 afghanistan,iskp,other_ner
+afghanistan,khorasan,other_ner
 afghanistan,nrf,other_ner
 afghanistan,afghanistan,country_name
 aland islands,aland islands,country_name
@@ -76,10 +76,10 @@ brunswick,brunswick,country_name
 bulgaria,sofia,capital
 bulgaria,bulgaria,country_name
 burkina faso,ouagadougou,capital
+burkina faso,islamic state sahel province,other_ner
+burkina faso,issp,other_ner
 burkina faso,jnim,other_ner
 burkina faso,vdp,other_ner
-burkina faso,issp,other_ner
-burkina faso,islamic state sahel province,other_ner
 burkina faso,burkina faso,country_name
 burundi,gitega,capital
 burundi,red tabara,other_ner
@@ -88,10 +88,10 @@ burundi,burundi,country_name
 cambodia,phnom penh,capital
 cambodia,cambodia,country_name
 cameroon,yaounde,capital
-cameroon,fulani,other_ner
-cameroon,iswap,other_ner
-cameroon,islamic state west africa province,other_ner
 cameroon,ambazon,other_ner
+cameroon,fulani,other_ner
+cameroon,islamic state west africa province,other_ner
+cameroon,iswap,other_ner
 cameroon,cameroon,country_name
 canada,ottawa,capital
 canada,canada,country_name
@@ -105,9 +105,9 @@ central african republic,fulani,other_ner
 central african republic,wagner group,other_ner
 central african republic,central african republic,country_name
 chad,n djamena,capital
+chad,birgit,other_ner
 chad,iswap,other_ner
 chad,mouro,other_ner
-chad,birgit,other_ner
 chad,psf,other_ner
 chad,chad,country_name
 channel islands,channel islands,country_name
@@ -138,19 +138,19 @@ czechia,czechia,country_name
 czechoslovakia,czechoslovakia,country_name
 democratic republic of congo,kinshasa,capital
 democratic republic of congo,adf,other_ner
-democratic republic of congo,mayi mayi,other_ner
+democratic republic of congo,baraka,other_ner
 democratic republic of congo,biloze,other_ner
 democratic republic of congo,codeco,other_ner
-democratic republic of congo,mobondo,other_ner
+democratic republic of congo,eplc,other_ner
 democratic republic of congo,fpac,other_ner
 democratic republic of congo,ituri,other_ner
 democratic republic of congo,kasai,other_ner
+democratic republic of congo,mayi mayi,other_ner
+democratic republic of congo,mobondo,other_ner
 democratic republic of congo,red tabara,other_ner
 democratic republic of congo,tabara,other_ner
-democratic republic of congo,eplc,other_ner
-democratic republic of congo,wazalendo,other_ner
 democratic republic of congo,uplc,other_ner
-democratic republic of congo,baraka,other_ner
+democratic republic of congo,wazalendo,other_ner
 democratic republic of congo,congo kinshasa,country_name
 democratic republic of congo,congo,country_name
 denmark,copenhagen,capital
@@ -178,11 +178,13 @@ estonia,estonia,country_name
 eswatini,mbabane,capital
 eswatini,eswatini,country_name
 ethiopia,addis ababa,capital
-ethiopia,olf,other_ner
-ethiopia,oromo liberation,other_ner
 ethiopia,fano,other_ner
 ethiopia,kebele,other_ner
+ethiopia,olf,other_ner
+ethiopia,oromia,other_ner
 ethiopia,oromo,other_ner
+ethiopia,oromo liberation,other_ner
+ethiopia,tigray,other_ner
 ethiopia,ethiopia,country_name
 faeroe islands,torshavn,capital
 falkland islands,stanley,capital
@@ -228,15 +230,15 @@ guinea bissau,guinea bissau,country_name
 guyana,georgetown,capital
 guyana,guyana,country_name
 haiti,port au prince,capital
-haiti,mawozo,other_ner
-haiti,canaan gang,other_ner
 haiti,5 secondes,other_ner
-haiti,bwa kale,other_ner
-haiti,chien mechant,other_ner
-haiti,g pep,other_ner
-haiti,g 9,other_ner
 haiti,bout ba,other_ner
+haiti,bwa kale,other_ner
+haiti,canaan gang,other_ner
+haiti,chien mechant,other_ner
+haiti,g 9,other_ner
+haiti,g pep,other_ner
 haiti,kraze barye,other_ner
+haiti,mawozo,other_ner
 haiti,haiti,country_name
 hamburg,hamburg,country_name
 hanover,hanover,country_name
@@ -257,18 +259,18 @@ hungary,hungary,country_name
 iceland,reykjavik,capital
 iceland,iceland,country_name
 india,new delhi,capital
-india,naxal maoist,other_ner
 india,naxal,other_ner
+india,naxal maoist,other_ner
 india,india,country_name
 indonesia,jakarta,capital
 indonesia,indonesia,country_name
 iran,tehran,capital
-iran,khorasan,other_ner
 iran,iskp,other_ner
+iran,khorasan,other_ner
 iran,iran,country_name
 iraq,baghdad,capital
-iraq,daesh,other_ner
 iraq,al shaghanba,other_ner
+iraq,daesh,other_ner
 iraq,isil,other_ner
 iraq,isis,other_ner
 iraq,kurdistan,other_ner
@@ -278,6 +280,7 @@ ireland,ireland,country_name
 isle of man,douglas,capital
 isle of man,isle of man,country_name
 israel,jerusalem,capital
+israel,netanyahu,other_ner
 israel,israel,country_name
 italy,rome,capital
 italy,italy,country_name
@@ -336,16 +339,16 @@ malaysia,malaysia,country_name
 maldives,male,capital
 maldives,maldives,country_name
 mali,bamako,capital
-mali,jnim,other_ner
-mali,wagner group,other_ner
+mali,ambassagou,other_ner
+mali,cmfpr1,other_ner
+mali,gatia,other_ner
+mali,gendamerie,other_ner
 mali,islamic state sahel province,other_ner
 mali,issp,other_ner
-mali,ambassagou,other_ner
-mali,gatia,other_ner
-mali,tuareg,other_ner
-mali,gendamerie,other_ner
-mali,cmfpr1,other_ner
+mali,jnim,other_ner
 mali,plateforme,other_ner
+mali,tuareg,other_ner
+mali,wagner group,other_ner
 mali,mali,country_name
 malta,valletta,capital
 malta,malta,country_name
@@ -358,17 +361,17 @@ mauritius,mauritius,country_name
 mayotte,mayotte,country_name
 mecklenburg schwerin,mecklenburg schwerin,country_name
 mexico,mexico city,capital
-mexico,sinaloa,other_ner
+mexico,chiapas,other_ner
+mexico,cjng,other_ner
+mexico,jalisco new generation,other_ner
+mexico,la familia michoacana,other_ner
+mexico,los cazadores,other_ner
+mexico,los chapitos,other_ner
 mexico,los herreras,other_ner
 mexico,los rusos,other_ner
 mexico,los tlacos,other_ner
-mexico,cjng,other_ner
-mexico,jalisco new generation,other_ner
 mexico,santa rosa de lima,other_ner
-mexico,los cazadores,other_ner
-mexico,la familia michoacana,other_ner
-mexico,los chapitos,other_ner
-mexico,chiapas,other_ner
+mexico,sinaloa,other_ner
 mexico,mexico,country_name
 micronesia,micronesia,country_name
 modena,modena,country_name
@@ -386,82 +389,84 @@ morocco,morocco,country_name
 mozambique,maputo,capital
 mozambique,mozambique,country_name
 myanmar,naypyidaw,capital
+myanmar,abino tiger,other_ner
+myanmar,ah htoo,other_ner
+myanmar,alawaka,other_ner
+myanmar,arakan,other_ner
+myanmar,black falcon,other_ner
+myanmar,chinland,other_ner
+myanmar,danu,other_ner
+myanmar,daung min,other_ner
+myanmar,dawei,other_ner
+myanmar,dsnda,other_ner
+myanmar,dsndf,other_ner
+myanmar,gyobingauk,other_ner
+myanmar,homalin,other_ner
+myanmar,hpdf,other_ner
 myanmar,kachin,other_ner
+myanmar,kale district,other_ner
+myanmar,kanbalu,other_ner
 myanmar,karen national,other_ner
-myanmar,myaung,other_ner
-myanmar,mspdf,other_ner
-myanmar,people s defense force,other_ner
-myanmar,launglon,other_ner
-myanmar,sein baydar,other_ner
+myanmar,karenni,other_ner
+myanmar,kaung kin,other_ner
 myanmar,kbu,other_ner
-myanmar,pakokku,other_ner
+myanmar,khin u,other_ner
+myanmar,kndo,other_ner
+myanmar,kyar nyi,other_ner
+myanmar,launglon,other_ner
+myanmar,madaya,other_ner
+myanmar,magway,other_ner
+myanmar,mandalay,other_ner
+myanmar,matupi,other_ner
+myanmar,min kha,other_ner
+myanmar,min kha sit kyaung,other_ner
 myanmar,monywa,other_ner
-myanmar,yinmarbin,other_ner
+myanmar,mspdf,other_ner
+myanmar,msrf,other_ner
+myanmar,myaing,other_ner
+myanmar,myaung,other_ner
+myanmar,myeik,other_ner
+myanmar,myingyan,other_ner
+myanmar,myo nei,other_ner
+myanmar,na gar,other_ner
+myanmar,natogyi,other_ner
+myanmar,ngazun,other_ner
+myanmar,nsppdf,other_ner
 myanmar,okpho,other_ner
+myanmar,pa oh,other_ner
+myanmar,pakokku,other_ner
+myanmar,palaung,other_ner
+myanmar,paungde,other_ner
+myanmar,people s defense force,other_ner
+myanmar,pnla,other_ner
+myanmar,pnlo,other_ner
+myanmar,pslf,other_ner
+myanmar,pu war,other_ner
+myanmar,pyay,other_ner
+myanmar,rakhine,other_ner
+myanmar,red bandana,other_ner
+myanmar,rohingya,other_ner
+myanmar,salingyi,other_ner
+myanmar,seikphyu,other_ner
+myanmar,sein baydar,other_ner
+myanmar,shwe tan,other_ner
+myanmar,shwebo,other_ner
+myanmar,siyin,other_ner
+myanmar,ta ang,other_ner
+myanmar,taloke,other_ner
+myanmar,tanintharyi,other_ner
+myanmar,tartay,other_ner
+myanmar,thandaung,other_ner
+myanmar,thayarwady,other_ner
+myanmar,thayet,other_ner
+myanmar,tnla,other_ner
+myanmar,union liberation front,other_ner
+myanmar,uurf,other_ner
+myanmar,yangon,other_ner
 myanmar,ye bi lu aphwe,other_ner
 myanmar,ye ogre,other_ner
-myanmar,arakan,other_ner
-myanmar,abino tiger,other_ner
-myanmar,min kha sit kyaung,other_ner
-myanmar,min kha,other_ner
-myanmar,ngazun,other_ner
-myanmar,magway,other_ner
-myanmar,myingyan,other_ner
-myanmar,kaung kin,other_ner
-myanmar,madaya,other_ner
-myanmar,gyobingauk,other_ner
-myanmar,yangon,other_ner
-myanmar,myaing,other_ner
-myanmar,karenni,other_ner
-myanmar,na gar,other_ner
-myanmar,shwe tan,other_ner
 myanmar,ye u,other_ner
-myanmar,thayarwady,other_ner
-myanmar,natogyi,other_ner
-myanmar,tanintharyi,other_ner
-myanmar,danu,other_ner
-myanmar,tartay,other_ner
-myanmar,kale district,other_ner
-myanmar,shwebo,other_ner
-myanmar,pyay,other_ner
-myanmar,dawei,other_ner
-myanmar,nsppdf,other_ner
-myanmar,seikphyu,other_ner
-myanmar,thandaung,other_ner
-myanmar,alawaka,other_ner
-myanmar,mandalay,other_ner
-myanmar,myeik,other_ner
-myanmar,myo nei,other_ner
-myanmar,salingyi,other_ner
-myanmar,pnlo,other_ner
-myanmar,pnla,other_ner
-myanmar,pa oh,other_ner
-myanmar,kndo,other_ner
-myanmar,pu war,other_ner
-myanmar,red bandana,other_ner
-myanmar,kanbalu,other_ner
-myanmar,taloke,other_ner
-myanmar,chinland,other_ner
-myanmar,matupi,other_ner
-myanmar,union liberation front,other_ner
-myanmar,msrf,other_ner
-myanmar,paungde,other_ner
-myanmar,siyin,other_ner
-myanmar,khin u,other_ner
-myanmar,ah htoo,other_ner
-myanmar,black falcon,other_ner
-myanmar,uurf,other_ner
-myanmar,kyar nyi,other_ner
-myanmar,thayet,other_ner
-myanmar,daung min,other_ner
-myanmar,dsndf,other_ner
-myanmar,dsnda,other_ner
-myanmar,hpdf,other_ner
-myanmar,homalin,other_ner
-myanmar,pslf,other_ner
-myanmar,tnla,other_ner
-myanmar,palaung,other_ner
-myanmar,ta ang,other_ner
+myanmar,yinmarbin,other_ner
 myanmar,myanmar,country_name
 namibia,windhoek,capital
 namibia,namibia,country_name
@@ -478,37 +483,37 @@ new zealand,new zealand,country_name
 nicaragua,managua,capital
 nicaragua,nicaragua,country_name
 niger,niamey,capital
-niger,islamic state sahel province,other_ner
-niger,issp,other_ner
-niger,fpl,other_ner
-niger,jnim,other_ner
 niger,boko haram,other_ner
-niger,islamic state west africa province,other_ner
-niger,iswap,other_ner
+niger,fpl,other_ner
 niger,gendamerie,other_ner
+niger,islamic state sahel province,other_ner
+niger,islamic state west africa province,other_ner
+niger,issp,other_ner
+niger,iswap,other_ner
+niger,jnim,other_ner
 niger,motogatta,other_ner
 niger,tchalakame,other_ner
 niger,niger,country_name
 nigeria,abuja,capital
-nigeria,zamfara,other_ner
-nigeria,tarok,other_ner
-nigeria,katsina,other_ner
+nigeria,bassa,other_ner
+nigeria,benue,other_ner
+nigeria,boko haram,other_ner
 nigeria,fulani,other_ner
-nigeria,okuama,other_ner
-nigeria,islamic state west africa province,other_ner
-nigeria,iswap,other_ner
-nigeria,mnjtf,other_ner
+nigeria,gbagyi,other_ner
 nigeria,ichen,other_ner
 nigeria,ipob,other_ner
-nigeria,benue,other_ner
+nigeria,islamic state west africa province,other_ner
+nigeria,iswap,other_ner
 nigeria,kaduna,other_ner
-nigeria,boko haram,other_ner
-nigeria,bassa,other_ner
-nigeria,montol,other_ner
-nigeria,watch corps,other_ner
-nigeria,okoloba,other_ner
-nigeria,gbagyi,other_ner
+nigeria,katsina,other_ner
 nigeria,kauru,other_ner
+nigeria,mnjtf,other_ner
+nigeria,montol,other_ner
+nigeria,okoloba,other_ner
+nigeria,okuama,other_ner
+nigeria,tarok,other_ner
+nigeria,watch corps,other_ner
+nigeria,zamfara,other_ner
 nigeria,nigeria,country_name
 niue,niue,country_name
 norfolk island,norfolk island,country_name
@@ -524,19 +529,20 @@ oman,muscat,capital
 oman,oman,country_name
 orange free state,orange free state,country_name
 pakistan,islamabad,capital
-pakistan,tehreek,other_ner
 pakistan,baloch,other_ner
 pakistan,islamic state pakistan province,other_ner
 pakistan,ispp,other_ner
 pakistan,jatoi,other_ner
+pakistan,tehreek,other_ner
 pakistan,pakistan,country_name
 palau,palau,country_name
 palestine,ramallah,capital
-palestine,hamas,other_ner
-palestine,palestinian islamic jihad,other_ner
-palestine,pij,other_ner
 palestine,al aqsa,other_ner
 palestine,gaza,other_ner
+palestine,hamas,other_ner
+palestine,khan younis,other_ner
+palestine,palestinian islamic jihad,other_ner
+palestine,pij,other_ner
 palestine,palestinian,country_name
 palestine,palestine,country_name
 palestine,palestine state of,country_name
@@ -568,10 +574,11 @@ reunion,reunion,country_name
 romania,bucharest,capital
 romania,romania,country_name
 russia,moscow,capital
-russia,khorasan,other_ner
-russia,islamic state khorasan province,other_ner
-russia,iskp,other_ner
 russia,freedom of russia,other_ner
+russia,iskp,other_ner
+russia,islamic state khorasan province,other_ner
+russia,khorasan,other_ner
+russia,putin,other_ner
 russia,rdk,other_ner
 russia,russia,country_name
 russian federation,russian federation,country_name
@@ -618,15 +625,15 @@ slovenia,slovenia,country_name
 solomon islands,solomon islands,country_name
 somalia,mogadishu,capital
 somalia,al shabaab,other_ner
-somalia,dir clan,other_ner
-somalia,jubaland,other_ner
-somalia,habar gedir saad,other_ner
-somalia,majerteen omar,other_ner
-somalia,hiiraan,other_ner
-somalia,sheeqaal,other_ner
 somalia,atmis,other_ner
+somalia,dir clan,other_ner
+somalia,habar gedir saad,other_ner
+somalia,hiiraan,other_ner
+somalia,jubaland,other_ner
 somalia,leelkayse,other_ner
 somalia,majerteen issa,other_ner
+somalia,majerteen omar,other_ner
+somalia,sheeqaal,other_ner
 somalia,somalia,country_name
 somaliland,somaliland,country_name
 south africa,pretoria,capital
@@ -637,23 +644,23 @@ south korea,seoul,capital
 south korea,south korea,country_name
 south korea,korea,country_name
 south sudan,juba,capital
-south sudan,murle,other_ner
-south sudan,bul clan,other_ner
-south sudan,dinka,other_ner
 south sudan,agar,other_ner
-south sudan,pakam agar,other_ner
 south sudan,anyuak,other_ner
-south sudan,gok clan,other_ner
-south sudan,panyar agar,other_ner
+south sudan,apuk giir rek,other_ner
 south sudan,apuk rek,other_ner
 south sudan,budi,other_ner
-south sudan,luach jang,other_ner
-south sudan,kuacthii leer rek,other_ner
-south sudan,apuk giir rek,other_ner
+south sudan,bul clan,other_ner
+south sudan,dinka,other_ner
 south sudan,gawaar,other_ner
-south sudan,rek,other_ner
+south sudan,gok clan,other_ner
+south sudan,kuacthii leer rek,other_ner
 south sudan,kuok luach jang,other_ner
+south sudan,luach jang,other_ner
+south sudan,murle,other_ner
 south sudan,nyang rek,other_ner
+south sudan,pakam agar,other_ner
+south sudan,panyar agar,other_ner
+south sudan,rek,other_ner
 south sudan,south sudan,country_name
 spain,madrid,capital
 spain,spain,country_name
@@ -667,27 +674,27 @@ st pierre miquelon,st pierre miquelon,country_name
 st vincent grenadines,st vincent grenadines,country_name
 stateless,stateless,country_name
 sudan,khartoum,capital
-sudan,rsf,other_ner
-sudan,rapid support forces,other_ner
-sudan,splm,other_ner
 sudan,abdelaziz,other_ner
-sudan,splm n abdelaziz,other_ner
 sudan,abdul wahid,other_ner
-sudan,mahyriya,other_ner
-sudan,rizeigat,other_ner
-sudan,shugara,other_ner
-sudan,darfur,other_ner
-sudan,twic,other_ner
-sudan,nuer,other_ner
-sudan,habbaniyah,other_ner
-sudan,misseriya,other_ner
-sudan,mararit,other_ner
-sudan,el udayyah,other_ner
-sudan,al sharef,other_ner
-sudan,habila,other_ner
-sudan,teital,other_ner
-sudan,ngok,other_ner
 sudan,abu darak,other_ner
+sudan,al sharef,other_ner
+sudan,darfur,other_ner
+sudan,el udayyah,other_ner
+sudan,habbaniyah,other_ner
+sudan,habila,other_ner
+sudan,mahyriya,other_ner
+sudan,mararit,other_ner
+sudan,misseriya,other_ner
+sudan,ngok,other_ner
+sudan,nuer,other_ner
+sudan,rapid support forces,other_ner
+sudan,rizeigat,other_ner
+sudan,rsf,other_ner
+sudan,shugara,other_ner
+sudan,splm,other_ner
+sudan,splm n abdelaziz,other_ner
+sudan,teital,other_ner
+sudan,twic,other_ner
 sudan,sudan,country_name
 suriname,paramaribo,capital
 suriname,suriname,country_name
@@ -698,15 +705,15 @@ sweden,sweden,country_name
 switzerland,bern,capital
 switzerland,switzerland,country_name
 syria,damascus,capital
-syria,hts,other_ner
-syria,hayat,other_ner
-syria,jws,other_ner
-syria,isil,other_ner
-syria,isis,other_ner
 syria,al fath,other_ner
 syria,daesh,other_ner
-syria,qsd,other_ner
+syria,hayat,other_ner
+syria,hts,other_ner
+syria,isil,other_ner
+syria,isis,other_ner
+syria,jws,other_ner
 syria,qdw,other_ner
+syria,qsd,other_ner
 syria,syria,country_name
 syrian arab republic,syrian arab republic,country_name
 taiwan,taipei,capital
@@ -747,7 +754,15 @@ u s virgin islands,u s virgin islands,country_name
 uganda,kampala,capital
 uganda,uganda,country_name
 ukraine,kyiv,capital
+ukraine,crimea,other_ner
+ukraine,donbas,other_ner
+ukraine,donetsk,other_ner
+ukraine,kharkiv,other_ner
+ukraine,kherson,other_ner
 ukraine,lsr,other_ner
+ukraine,luhansk,other_ner
+ukraine,zaporizhzhia,other_ner
+ukraine,zelensky,other_ner
 ukraine,ukraine,country_name
 united arab emirates,abu dhabi,capital
 united arab emirates,united arab emirates,country_name
@@ -776,8 +791,8 @@ western sahara,western sahara,country_name
 wuerttemburg,wuerttemburg,country_name
 wurtemberg,wurtemberg,country_name
 yemen,sana a,capital
-yemen,houthi,other_ner
 yemen,giants brigades,other_ner
+yemen,houthi,other_ner
 yemen,yemen,country_name
 yemen arab republic,yemen arab republic,country_name
 yemen people s republic,yemen people s republic,country_name
