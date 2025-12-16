@@ -86,7 +86,7 @@ scale_factor <- max(nyt_events_match_grouped$fatalities)/max(nyt_events_match_gr
 
 # a function to color one region over time and label everything else as "other" 
 # region_pick <- "Ukraine/Russia"
-plot_events <- function (region_pick, just_arts = F) {
+plot_events <- function (region_pick, just_arts = F, include_country = F) {
   
   # get number of distinct articles over time
   ts_event_news <- nyt_events_check %>% 
@@ -143,10 +143,18 @@ plot_events <- function (region_pick, just_arts = F) {
       pivot_longer(cols = c(n_art_smooth, n_fat_smooth, n_art_country_smooth), names_to = "stat", values_to = "n") %>% 
       filter(!is.na(n)) %>% 
       transform(stat = ifelse(stat == "n_art_smooth", "Total Article Count (Event-Level)",
-                              ifelse(stat == "n_art_country_smooth", "Total Article Count (Country-Level)", "Total Fatalities")))  # %>% 
-      # filter(stat == "Total Article Count (Country-Level)")
+                              ifelse(stat == "n_art_country_smooth", "Total Article Count (Country-Level)", "Total Fatalities")))
     
-    text_size <- 10
+    
+    if (include_country == F) {
+      
+      ts_long <- ts_long %>% filter(stat != "Total Article Count (Country-Level)")
+      
+    }
+    
+    n_series <- ts_long %>% select(stat) %>% distinct %>% nrow()
+    
+    text_size <- 20
     
     if (just_arts == T) {
       
@@ -156,7 +164,7 @@ plot_events <- function (region_pick, just_arts = F) {
         filter(grepl("Article Count", stat))
       
       # plotting dual axes time series
-      ggplot(ts_long, aes(x = event_date, y = n)) + 
+      ts <- ggplot(ts_long, aes(x = event_date, y = n)) + 
         geom_line(aes(color = stat, linetype = stat), linewidth = 0.5, alpha = 0.5) +
         geom_smooth(aes(color = stat, linetype = stat)) + 
         scale_y_continuous(name = "Number of Articles") + 
@@ -179,14 +187,14 @@ plot_events <- function (region_pick, just_arts = F) {
     else {
   
     # plotting dual axes time series
-    ggplot(ts_long, aes(x = event_date, y = n)) + 
+    ts <- ggplot(ts_long, aes(x = event_date, y = n)) + 
       geom_line(aes(color = stat, linetype = stat), linewidth = 1) +
       scale_y_continuous(name = "Number of Fatalities",
                          sec.axis = sec_axis(~ . / scale_factor, name = "Number of Articles")) + 
       scale_color_manual(values = ts_pal) + 
       scale_linetype_manual(values = ts_lines) + 
       theme_linedraw() + 
-      theme(legend.position = "none",
+      theme(legend.position = "bottom",
             legend.title = element_blank(), 
             title = element_text(size = text_size),
             legend.text = element_text(size = text_size),
@@ -195,14 +203,21 @@ plot_events <- function (region_pick, just_arts = F) {
             axis.title.x = element_blank(),
             axis.text.x = element_text(size = text_size)) + 
       labs(title = region_pick) + 
-      guides(colour = guide_legend("stat"), linetype = guide_legend("stat"))
+      guides(colour = guide_legend("stat", nrow = n_series), 
+             linetype = guide_legend("stat", nrow = n_series))
+      
       
     }
+    
+    file_region_name <- str_remove_all(region_pick, '\\/')
+    file_name_add <- ifelse(just_arts == T, "_only_arts", "")
+    ggsave(glue("exhibits/02_nyt_event_country_indv/ex7_{n_series}ts_{file_region_name}{file_name_add}.png"), ts,
+           width =10, height = 8, units = "in")
   
 }
 
 ts_list <- map(c("Africa", "Ukraine/Russia", "Palestine/Israel", "Greater ME", "Myanmar"), 
-                      ~plot_events(.))
+                      ~plot_events(., just_arts = F, include_country = T))
 
 grid.arrange(grobs = ts_list[c(1:6)], nrow = 3)
 
@@ -224,7 +239,7 @@ plot_art_vs_fat_point_event <- function (region_pick) {
       total_fat = sum(fatalities),
     )
   
-  ggplot(data = for_point_plt,
+  point_plt_indv <- ggplot(data = for_point_plt,
          aes(x = fatalities, y = n_art)) + 
     geom_point(aes(color = region_label), size = 3, alpha = 0.35) + 
     scale_color_manual(values = pal) + 
@@ -239,6 +254,10 @@ plot_art_vs_fat_point_event <- function (region_pick) {
           axis.title.x = element_text(size = 12),
           axis.title.y = element_text(size = 12),
           title = element_text(size = 12)) 
+  
+  file_region_name <- str_remove_all(region_pick, '\\/')
+  ggsave(glue("exhibits/02_nyt_event_country_indv/ex6_point_plt_{file_region_name}.png"), point_plt_indv,
+         width =6, height = 4, units = "in")
   
 }
 

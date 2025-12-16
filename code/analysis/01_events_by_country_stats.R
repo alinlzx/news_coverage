@@ -179,13 +179,16 @@ map_var_xwalk <- tibble(
         #                y = lat,
         #                size = get(stat_col)), color = heat_color,
         #            alpha = 0.5) +
-        # scale_size_continuous(guide = "none", range = c(1, 25)) +
+        scale_size_continuous(guide = "none", range = c(1, 50)) +
         theme_minimal() +
+        theme(legend.text = element_text(size = 15),
+              legend.title = element_text(size = 20)) + 
         coord_sf(xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
         labs(fill = glue("{pull(map_var_xwalk %>% filter(varname == stat_col), varlab)}")) + 
           theme(legend.position = "bottom",
                 axis.title.x = element_blank(),
-                axis.title.y = element_blank())
+                axis.title.y = element_blank()) + 
+        guides(fill = guide_colorbar(barwidth = 10, barheight = 1.5))
       
       
       
@@ -197,16 +200,30 @@ map_var_xwalk <- tibble(
   }
   
 # applying the function to fat:
+# and saving exhibits
+  
+world_fat <- plot_world_statistic( "total_fat")
+world_art <- plot_world_statistic( "n_art")
+ggsave("exhibits/01_events_by_country_stats/ex1_world_fat.png", world_fat,
+       width = 15, height = 7, units = "in")
+ggsave("exhibits/01_events_by_country_stats/ex2_world_art.png", world_art,
+       width = 15, height = 7, units = "in")
 
-plot_world_statistic( "total_fat")
+east_art <- plot_world_statistic( "n_art", "East")
+east_fat <- plot_world_statistic( "total_fat", "East")
+east_compare <- grid.arrange(east_art, east_fat, ncol = 1)
+ggsave("exhibits/01_events_by_country_stats/ex3_east_compare.png", east_compare,
+       width = 8, height = 15, units = "in")
 
-art <- plot_world_statistic( "n_art", "East")
-fat <- plot_world_statistic( "total_fat", "East")
-grid.arrange(art, fat, ncol = 2)
+west_art <- plot_world_statistic( "n_art", "West")
+west_fat <- plot_world_statistic( "total_fat", "West")
+west_compare <- grid.arrange(west_art, west_fat, ncol = 2)
+ggsave("exhibits/01_events_by_country_stats/ex3_west_compare.png", west_compare,
+       width =15, height = 8, units = "in")
 
 # dual axis bars -------------------
 
-stat_col <- "n_art"
+stat_col <- "total_fat"
 
 # getting scale factor for dual axes
 scale_factor <- max(nyt_country_grouped$total_fat)/max(nyt_country_grouped$n_art)
@@ -221,7 +238,7 @@ nyt_country_grouped_long <- nyt_country_grouped %>% arrange(get(stat_col)) %>% s
             country = ifelse(country == "Democratic Republic Of Congo", "DRC", country))
 
 
-ggplot(nyt_country_grouped_long) + 
+dual_bar <- ggplot(nyt_country_grouped_long) + 
   geom_bar(stat = "identity", aes(x = reorder(country, index_by_stat), y = n, fill = stat), position = "dodge") + 
   scale_y_continuous(name = "Number of Fatalities",
                      sec.axis = sec_axis(~ . / scale_factor, name = "Number of Articles")) + 
@@ -236,10 +253,13 @@ ggplot(nyt_country_grouped_long) +
         axis.title.x = element_blank(),
         axis.text.x = element_text(angle = 75, vjust = 1, hjust = 1, size = 20))
 
+ggsave(glue("exhibits/01_events_by_country_stats/ex4_dual_bar_order_by_{stat_col}.png"), dual_bar,
+       width =8, height = 6, units = "in")
+
 # point plot of casualty on coverage --------------------
 
 # highlight one region, and then make all other regions gray: 
-# region_pick <- "Africa"
+# region_pick <- "Palestine"
 
 plt_art_vs_fat_point <- function (region_pick) {
   
@@ -259,7 +279,7 @@ plt_art_vs_fat_point <- function (region_pick) {
            "gray")
   names(pal) <- c(for_point_plt$region_un %>% unique() %>% sort, "Other")
   
-  ggplot(data = for_point_plt,
+  point_plt <- ggplot(data = for_point_plt,
          aes(x = total_fat, y = n_art)) + 
     geom_point(aes(color = region_label), size = 3) + 
     scale_color_manual(values = pal) + 
@@ -279,6 +299,10 @@ plt_art_vs_fat_point <- function (region_pick) {
                      box.padding = unit(0.5, "lines"),
                      point.padding = unit(0.5, "lines"),
                      segment.colour = "grey50")
+  
+  file_region_name <- str_remove_all(region_pick, '\\/')
+  ggsave(glue("exhibits/01_events_by_country_stats/ex5_point_plt_{file_region_name}.png"), point_plt,
+         width =6, height = 4, units = "in")
   
   
 }

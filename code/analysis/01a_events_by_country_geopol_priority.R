@@ -55,7 +55,7 @@ make_geopol_points <- function (tier_pick) {
   geo_clabs <- for_geopol_point_plt %>% filter(grepl("Tier ", geo_contingency) & geo_contingency == tier_label) %>% 
     filter(n_art > 100 | total_fat > 1000)
   
-  ggplot(data = for_geopol_point_plt,
+  geopol_point_plt <- ggplot(data = for_geopol_point_plt,
          aes(x = total_fat, y = n_art)) + 
     geom_point(aes(color = tier_label), size = 3, alpha = 0.75) + 
     scale_color_manual(values = geo_pal) + 
@@ -77,9 +77,14 @@ make_geopol_points <- function (tier_pick) {
                      segment.colour = "grey50")
   
   
+  tier_n <- tier_pick %>% str_extract("\\d+")
+  ggsave(glue("exhibits/01a_events_by_country_geopol_priority/ex8_point_plt_tier{tier_n}_contingency.png"), geopol_point_plt,
+         width =6, height = 4, units = "in")
+  
+  
 }
 
-make_geopol_points("Tier 3 Contingency")
+# make_geopol_points("Tier 3 Contingency")
 
 geopol_point_plts <- map(geopol_priorities %>% pull(geo_contingency) %>% unique,
                          ~make_geopol_points(.))
